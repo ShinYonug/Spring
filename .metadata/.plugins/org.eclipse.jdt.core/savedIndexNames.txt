@@ -1,0 +1,12 @@
+INDEX VERSION 1.131+C:\SprGit\.metadata\.plugins\org.eclipse.jdt.core
+4026198302.index
+2236431909.index
+1530321038.index
+1884564646.index
+1612448286.index
+2314347566.index
+1482338034.index
+1108539383.index
+2431570429.index
+4292842325.index
+59832055.index

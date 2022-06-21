@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 	<bean id="tv2" class="polymorphism.LgTV"  > -->
+<!-- 		<constructor-arg ref="apple" ></constructor-arg> 매개변수가 된다 삼성(매개변수 , 매개변수) -->
+<!-- 		<constructor-arg value="500" >type = "doubld"  실수 방지위해 타입 지정 가능 </constructor-arg> -->
+<!-- 		</bean>  -->
+	<bean id="tv" class="polymorphism.SamsungTV"  p:speaker-ref="sony"  p:price="2500"></bean>   <!--  아래property 사용한거랑 같은 의미의 문장이다 -->
+		
+<!-- 		<property name="speaker" ref="apple"></property>     SamsungTV 안에 setPrice 와 setSpeaker 와 name 이 일치해야한다 뒤에 값은 넣을 값 -->
+<!-- 		<property name="price" value="250000"></property> -->
+	
+<!-- 		<constructor-arg ref="apple" ></constructor-arg> 매개변수가 된다 삼성(매개변수 , 매개변수) -->
+<!-- 		<constructor-arg value="270000.35" >type = "doubld"  실수 방지위해 타입 지정 가능 </constructor-arg> -->
+<!-- 		</bean>  -->
+	<!--  init-method="d" 빈이 메모리에 올라갈 때( 그니까 여기서는 xml파일이 로딩될때 객체가 생성된다 이떄 같이 올라간다)` -->
+	<!--  destroy-method -->
+	<!-- lazy-init="true"  요놈은 객체 생성 하지마 그럼 언제해? 요놈이 호출 될때여기서는 삼성티비가 호출 되면 그때 객체 생성해라 라는 말 -->
+	<!-- scope="singleton"  ::객체가 하나인 놈 객체 공유/ "prototype" :: 객체가 따로 생성된다 객체가 개별적 값이 수정되면 안될때 개별적 보관-->
+	<bean id="sony" class = "polymorphism.SonySpeaker"/>
+	<bean id="apple" class = "polymorphism.AppleSpeaker"/>
+</beans>

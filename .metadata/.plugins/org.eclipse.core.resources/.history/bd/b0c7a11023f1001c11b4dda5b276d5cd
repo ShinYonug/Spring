@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="tv" class="polymorphism.SamsungTV" init-method="AAA" destroy-method="BBB" />
+	<!-- lazy-init="true"  요놈은 객체 생성 하지마 그럼 언제해? 요놈이 호출 될때여기서는 삼성티비가 호출 되면 그때 객체 생성해라 라는 말 -->
+	<bean id="tv2" class="polymorphism.LgTV"/>
+</beans>

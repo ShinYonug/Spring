@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Tue Jun 21 12:55:56 KST 2022
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\zm255\\.m2\\repository\\org\\springframework\\spring-web\\5.2.7.RELEASE\\spring-web-5.2.7.RELEASE.jar=C\:\\Utils\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\BoardWeb\\WEB-INF\\lib\\spring-web-5.2.7.RELEASE.jar
+org.eclipse.jst.jee.server\:BoardWeb=C\:\\Utils\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\BoardWeb

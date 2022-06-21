@@ -1,0 +1,19 @@
+package com.springbook.ioc.injection;
+
+import java.util.List;
+
+public class CollectionBean {
+
+	private List<String> AddressList;
+
+	public List<String> getAddressList() {
+		return AddressList;
+	}
+
+	public void setAddressList(List<String> AddressList) {
+		this.AddressList = AddressList;
+	}
+
+	
+}
+

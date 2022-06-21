@@ -1,0 +1,4 @@
+INDEX VERSION 1.4+C:\SprGit\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2236431909.index
+1772527207.index
+1108539383.index

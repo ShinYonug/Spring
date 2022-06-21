@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\SprGit\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3080424700.index
+\MyBatisTest\src\main\java
+C:\SprGit\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1105807604.index
+\MyBatisTest00\src\main\java
