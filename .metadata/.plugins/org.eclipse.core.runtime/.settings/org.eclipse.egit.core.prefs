@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\SpringGit\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\SpringGit\\.git;
+GitRepositoriesView.GitDirectories=C\:\\SprGit\\.git;C\:\\SpringGit\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;C\:\\SpringGit\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
