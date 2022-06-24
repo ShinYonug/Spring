@@ -1,0 +1,14 @@
+h2database 다운로드
+h2w 파일 실행
+
+project faces >> java 11 / run apache
+src/main/resources >> meta folder delete
+src> main> webapp > web-inf>> spring/view delete
+& web.xml open>> <web-app> other all delete
+pom.xml >> java version 1.8 / source&target 1.8 >>spring version 5.2.7 >>log4j all delete
+
+
+
+Spring Container
+
+src/main/resources >> new >> bean configuration >>"application" --( bean File auto creating) 

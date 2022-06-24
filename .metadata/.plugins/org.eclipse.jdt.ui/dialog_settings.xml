@@ -55,6 +55,8 @@
 		<item key="JarManifestWizardPage.MANIFEST_LOCATION" value=""/>
 		<item key="JarManifestWizardPage.SEAL_JAR" value="false"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\zm255\Desktop\SHINYOUNG.jar"/>
+			<item value="C:\Users\zm255\Desktop\김신영.jar"/>
 			<item value="C:\Users\zm255\Desktop\calc.jar"/>
 		</list>
 	</section>
