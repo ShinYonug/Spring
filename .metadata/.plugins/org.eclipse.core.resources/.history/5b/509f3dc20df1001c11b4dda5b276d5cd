@@ -1,9 +1,0 @@
-package com.ezen.prj;
-
-public class BoardVO {
-
-	int id;
-	String phone;
-	String address;
-	String name;
-}
