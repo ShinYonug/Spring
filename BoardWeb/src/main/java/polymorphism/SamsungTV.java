@@ -1,6 +1,5 @@
 package polymorphism;
 
-import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class SamsungTV implements TV{
 //	@Autowired
 //	@Qualifier("appleSpeaker")
-	@Resource(name="appleSpeaker") //Resource를 이용하면 위 두문장을 하나로 축약할 수 있다.
+//	@Resources(name="appleSpeaker") //Resource를 이용하면 위 두문장을 하나로 축약할 수 있다.
 	private Speaker speaker;
 	private int price;
 	
