@@ -1,0 +1,102 @@
+ex00
+<pom> 
+>> java-version 1.8 
+>> source ,target ${java-version} 
+>> 5.2.7.RELEASE
+>>save pom.xml >>	<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc(/test/jdbc/tx 복사 생성)</artifactId>
+			<version>${org.springframework-version}</version>
+				</dependency>
+>>add lombok 
+>>add jdbc 
+>>save pom.xml
+</pom>
+
+>> src/test/java + persistance pack 
+>>JDBCTests.java(static Driver, con <<--Connection)
+
+<pom>
+>>JUnit ver 4.12-->4.17 >> under JUnit /delete <es***> 
+>><log4j ver 1.2.15 --> 1.2.17>
+</pom>
+
+>>add @Log4j above  class JDBCTests              //JDBC 연결 테스트
+>>add @Test(->Junit4)   above  void testConnection()
+>>testConnection <--add ' log.info(con); ' for test 
+>>drag testConnection >Run as
+
+<pom>
+>>Hikricp >><!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+				<dependency>
+    			<groupId>com.zaxxer</groupId>
+    			<artifactId>HikariCP</artifactId>
+ 			   <version>5.0.1</version>
+				</dependency>
+</pom>
+
+`
+//
+<!-- Root Context: defines shared resources visible to all other web components --!>
+		<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+       <property name="driverClassName" value="oracle.jdbc.pool.OracleDataSource"></property>
+      <property name="jdbcUrl" value="jdbc:oracle:thin:@URL주소:1521:시드명"></property> 
+         Oracle 11g 경우 value="jdbc:oracle:thin:@URL주소:1521:XE"
+         Oracle 19  경우 value="jdbc:oracle:thin:@URL주소:1521:orcl"
+      <property name="username" value="계정명"></property>
+      <property name="password" value="비밀번호"></property>
+   </bean>   
+   
+   <bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+      <constructor-arg ref="hikariConfig"></constructor-arg>
+   </bean>
+//
+>>persistance pack                          //CP 연결 테스트
+>>add class DataSourceTests 
+>@Runwith @ContextConfiguration("file:******/root-context.xml") @Log4j  above class
+> @Autowired above variable DataSource
+>@Test above void testConnection()
+
+<pom>
+>>enter maven repository >  mybatis & mybatis spring > add dependency to pom
+</pom>
+
+>>root-context.xml >                         //mybatis 연결 테스트
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"></bean>
+
+>>class DataSourceTests > void testMybatis()
+
+>>root-context.xml >
+<mybatis-spring:scan base-package="org.zerock.mapper"/> //인터페이스 있는 경로 추가 
+	                                 
+<<<<<SQL 문장 생성 하는 놈들 >>>>>
+
+  //@어노테이션으로 해본거고
+>>src/test/java >persistence pack >make class TimeMapperTests >void testGetTime()
+//이번에는 xml 로 해본다
+mybatis.org > product > mybatis doc > getting started > exploring mapped sql statements
+		<?xml version="1.0" encoding="UTF-8" ?>
+		<!DOCTYPE mapper
+  		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		<mapper namespace="org.mybatis.example.BlogMapper">
+ 		 <select id="selectBlog" resultType="Blog">
+    		select * from Blog where id = #{id}
+  		</select>
+		</mapper>
+
+>>class TimeMapperTests > void testGetTime2() 
+
+					<<<<내부적으로 변경되는 것들 확인을 하고싶어서 폼에 log4jdbc 추가>>>>>
+
+log4jdbc.properties file >copy> src/test/resources & src/main/resources
+###charliecharlie.tistory.com/321
+{
+# 기본적으로 이렇게 설정되어 있을 것이다.
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.hikari.jdbc-url=jdbc:oracle:thin:@localhost:1521:xe
+
+# 이렇게 설정을 변경한다.
+spring.datasource.driver-class-name=net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+spring.datasource.hikari.jdbc-url=jdbc:log4jdbc:oracle:thin:@localhost:1521:xe
+}

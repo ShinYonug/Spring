@@ -1,15 +1,10 @@
 INDEX VERSION 1.4+C:\SprGit\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2357580325.index
-1441083686.index
-1811501731.index
 961465157.index
-3812875719.index
 1108539383.index
+2357580325.index
 1564137743.index
-3530667770.index
-3339215116.index
 2236431909.index
-2716150479.index
-1627020992.index
+1441083686.index
 1227033869.index
-133087071.index
+2487545169.index
+3530667770.index
