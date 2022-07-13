@@ -9,14 +9,14 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @RequestMapping("/sample/*")
 public class SampleController {
-
+	
 	@RequestMapping("/basic")
 	public void basic() {
-		log.info("basic-------");
+		log.info("basic-------------");
 	}
 	@RequestMapping("/basic2")
 	public String basic2() {
-		log.info("basic2-------");
-		return "basic2";
+		log.info("basic-------------");
+		return "basic";
 	}
 }

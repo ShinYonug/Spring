@@ -2,9 +2,12 @@ package org.zerock.persistence;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+
 import org.junit.Test;
 
 import lombok.extern.log4j.Log4j;
+
+
 @Log4j
 public class JDBCTests {
 	static {
@@ -13,18 +16,17 @@ public class JDBCTests {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
+	
 	@Test
-	public void testConnection(){
+	public void testConnection() {
 		try(Connection con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@localhost:1521:xe",
-				"book", 
-				"1234"	)){
+					"jdbc:oracle:thin:@localhost:1521:xe",
+					"book2",
+					"1234"	)){
 			log.info(con);
-		}catch(Exception e) {
+		}catch( Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }

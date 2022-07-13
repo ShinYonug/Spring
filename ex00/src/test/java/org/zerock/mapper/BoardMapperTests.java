@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
+import org.zerock.persistence.DataSourceTests;
 
 import lombok.extern.log4j.Log4j;
 
@@ -18,56 +19,52 @@ public class BoardMapperTests {
 	private BoardMapper mapper;
 	
 	@Test
-	public void testGetList(){
-//		mapper.getList().forEach(board -> log.info(board));
-		for(BoardVO vo : mapper.getList() ) {
+	public void testGetList() {
+	//	mapper.getList().forEach(board->log.info(board));
+		for (BoardVO vo : mapper.getList()) {
 			log.info(vo);
 		}
 	}
-	
 	@Test
-	public void testInsert() {
+	public void testinsert() {
 		BoardVO vo = new BoardVO();
 		vo.setTitle("java의 정석");
-		vo.setContent("자바 책 .......");
+		vo.setContent("자바 책 ........");
 		vo.setWriter("남궁성");
 		mapper.insert(vo);
 		log.info(vo);
 	}
-
 	@Test
-	public void testInsertSelectKey() {
+	public void testSelectKey() {
 		BoardVO vo = new BoardVO();
-		vo.setTitle("Jsp3");
-		vo.setContent("Jsp/Servlet3 ");
-		vo.setWriter("성윤정3");
-		mapper. insertSelectKey(vo);
+		vo.setTitle("Jsp2");
+		vo.setContent("JSP2/servlet");
+		vo.setWriter("성윤정2");
+		mapper.insertSelectKey(vo);
 		log.info(vo);
 	}
-	
 	@Test
 	public void testread() {
-		BoardVO vo = mapper.read(13L);
+		BoardVO vo = mapper.read(42L);
 		log.info(vo);
 	}
-	
 	@Test
 	public void testdelete() {
-//		 mapper.delete(13L);
-//		log.info("----------------------");
-		log.info("delete count:" + mapper.delete(5L));
+		log.info("delete count : "+mapper.delete(42L) );
 	}
-	
 	@Test
 	public void testupdate() {
-		BoardVO vo = new BoardVO();
-		vo.setBno(8L);
-		vo.setTitle("오라클");
-		vo.setContent("오라클");
-		vo.setWriter("오라클");
-//		mapper.update(vo);
-		log.info("update:"+mapper.update(vo));
+		BoardVO vo  =  new BoardVO();
+		vo.setBno(21L);
+		vo.setTitle("자바2");
+		vo.setContent("자바2");
+		vo.setWriter("자바2");
+		log.info("update : " +   mapper.update(vo) );
 	}
-
+	
+	
+	
+	
+	
 	
 }
