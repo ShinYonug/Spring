@@ -1,11 +1,14 @@
 package org.zerock.mapper;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 
 import lombok.extern.log4j.Log4j;
 
@@ -16,42 +19,53 @@ public class BoardMapperTests {
 	
 	@Autowired
 	private BoardMapper mapper;
+	
 	@Test
 	public void testGetList() {
-		log.info(mapper.getList());
-		
+		mapper.getList();
 	}
+	
 	@Test
 	public void testRead() {
-		log.info(mapper.read(1L));
+		mapper.read(4L);
 	}
 	@Test
-	public  void testDelete() {
-		log.info(mapper.delete(1L));
+	public void testDelete() {
+		mapper.delete(4L);
 	}
+	
 	@Test
-	public  void testInsert() {
+	public void testInsert() {
 		BoardVO vo = new BoardVO();
-		vo.setTitle("spring");
-		vo.setContent("hard");
-		vo.setWriter("김신영");
-		log.info(mapper.insert(vo));
+		vo.setTitle("제목");
+		vo.setContent("내용");
+		vo.setWriter("작성자");
+		mapper.insert(vo);
 	}
+
 	@Test
-	public  void testInsertSelectKey() {
-		 BoardVO vo = new BoardVO();
+	public void testInsertSelectKey() {
+		BoardVO vo = new BoardVO();
+		vo.setTitle("제목2");
+		vo.setContent("내용2");
+		vo.setWriter("작성자2");
+		mapper.insertSelectKey(vo);
+	}
+	
+	@Test
+	public void testUpdate() {
+		BoardVO vo = new BoardVO();
+		vo.setBno(6L);
 		vo.setTitle("java");
-		vo.setContent("ez");
-		vo.setWriter("김신영");
-		log.info(mapper.insertSelectKey(vo));
+		vo.setContent("java");
+		vo.setWriter("java");
+		mapper.update(vo);
 	}
 	@Test
-	public  void testUpdate() {
-		BoardVO vo = new BoardVO();
-		vo.setBno(2L);
-		vo.setTitle("java2");
-		vo.setContent("ez2");
-		vo.setWriter("김신일");
-		log.info(mapper.update(vo));
+	public void testPaging() {
+		Criteria cri = new Criteria();
+		List<BoardVO> list = mapper.getListWithPagging(cri);
+		log.info(list);
+		
 	}
 }
