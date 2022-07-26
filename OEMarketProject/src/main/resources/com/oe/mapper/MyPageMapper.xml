@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oe.mapper.MyPageMapper">
+	<select id="readMyPage" resultType="com.oe.domain.MyPageVO">
+		SELECT *
+		FROM MYPAGE
+		WHERE MY_ID = #{my_id}
+	</select>
+	<update id="updateMyPage" >
+		UPDATE MYPAGE
+		SET MY_IMAGE = #{my_image},
+			MY_NICKNAME = #{my_nickname},
+			MY_INTRO = #{my_intro}
+		WHERE MY_ID = #{my_id}
+	</update>
+	<delete id="deleteMember">
+		DELETE FROM MYPAGE
+		WHERE MY_ID = #{my_id}
+	</delete>
+	<select id="getUserPass" resultType="com.oe.domain.MarketUserVO">
+		SELECT US_PASS
+		FROM MARKETUSER
+		WHERE US_ID = #{my_id}
+	</select>
+</mapper>

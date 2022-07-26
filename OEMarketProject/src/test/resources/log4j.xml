@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.ezen.market">
+	<logger name="com.oe.controller">
 		<level value="info" />
 	</logger>
 	

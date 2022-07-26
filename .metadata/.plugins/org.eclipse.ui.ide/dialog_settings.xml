@@ -108,6 +108,13 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\zm255\Desktop\OEMarketProject"/>
+			<item value="C:\Users\zm255\Desktop\OEMarketProject222"/>
+			<item value="C:\Users\zm255\Desktop\새 폴더\Team-Project-5252\OEMarket2"/>
+			<item value="C:\Users\zm255\Desktop\새 폴더\Team-Project-5252\OEMarketProject"/>
+			<item value="C:\Users\zm255\Desktop\새 폴더\Team-Project-5252\OEMarket01"/>
+			<item value="C:\Users\zm255\Desktop\새 폴더\Team-Project-5252\Team-Project-5252"/>
+			<item value="C:\Users\zm255\Desktop\Team-Project-5252\OEMarket2"/>
 			<item value="C:\SprGit\ex02"/>
 			<item value="C:\SprGit\ex00"/>
 			<item value="C:\SprGit\ex01"/>
