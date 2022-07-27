@@ -4,19 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.oe.mapper.MarketUserMapper">
-	<select id="loginUser" resultType="com.oe.domain.MarketUserVO">
-		select * from marketuser where us_id = #{us_id} and us_pass = #{us_pass}
-	</select>
-	
-	<select id="findId" resultType="string">
-		select us_id from marketuser where us_name = #{us_name} and us_phone = #{us_phone}
-	</select>
+   <select id="loginUser" resultType="com.oe.domain.MarketUserVO">
+      select * from marketuser where us_pass = #{us_pass} and us_id =  
+      (select my_id from mypage where my_id = #{us_id} )
+   </select>
+   
+   <select id="findId" resultType="string">
+      select us_id from marketuser where us_name = #{us_name} and us_phone = #{us_phone}
+   </select>
 
-	<select id="findPass" resultType="string">
-		select us_pass from marketuser where us_id = #{us_id} and us_name = #{us_name} and us_phone = #{us_phone}
-	</select>
+   <select id="findPass" resultType="string">
+      select us_pass from marketuser where us_id = #{us_id} and us_name = #{us_name} and us_phone = #{us_phone}
+   </select>
 
-	<insert id="joinUser">
+   <insert id="joinUser">
       insert into marketuser(us_num, us_id, us_pass, us_name, us_nickname, us_birth, us_email, us_gender, 
       us_address1, us_address2, us_phone) 
       values((select nvl(max(us_num), 0)+1 from marketuser),#{us_id},#{us_pass},#{us_name},#{us_nickname},
@@ -36,13 +37,13 @@
       us_phone = #{us_phone}
       where us_id = #{us_id}
    </update>
-	
-	<select id="readUser" resultType="com.oe.domain.MarketUserVO">
-		select * from marketuser where us_id = #{us_id}
-	</select>
-	
-	<insert id="joinMypage">
-		insert into mypage(MY_ID, my_nickname)
-		values(#{us_id}, #{us_nickname} )
+   
+   <select id="readUser" resultType="com.oe.domain.MarketUserVO">
+      select * from marketuser where us_id = #{us_id}
+   </select>
+   
+   <insert id="joinMypage">
+      insert into mypage(MY_ID, my_nickname)
+      values(#{us_id}, #{us_nickname} )
    </insert>
 </mapper>

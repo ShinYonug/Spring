@@ -5,22 +5,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="/resources/assets/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
  <style>
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 550px}
+    .row content {
+    	height: 550px;
+    	margin-top: 100px;
+    }
     
     /* Set gray background color and 100% height */
     .sidenav {
       background-color: #f1f1f1;
       height: 100%;
+     
     }
         
     /* On small screens, set height to 'auto' for the grid */
     @media screen and (max-width: 767px) {
       .row.content {height: auto;} 
+     
     }
   </style>
 <title>관리자 페이지</title>
@@ -28,36 +34,17 @@
 <body>
 	<%@ include file="../includes/header.jsp"%>
 
-	<nav class="navbar navbar-inverse visible-xs">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#"><%-- ${uVo.us_nickname} --%>관리자 님</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Dashboard</a></li>
-					<li><a href="#">회원관리</a></li>
-					<li><a href="#">게시물관리</a></li>
-					<li><a href="#">회원 모드 </a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
+<section>
 	<div class="container-fluid">
 		<div class="row content">
 			<div class="col-sm-3 sidenav hidden-xs">
-				<h2>${uVo.us_nickname}관리자 님</h2>
+				<h2>관리자 님</h2>
 				<ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#section1">Dashboard</a></li>
-					<li><a href="#section2">회원관리</a></li>
-					<li><a href="#section3">게시물관리</a></li>
-					<li><a href="#section3">회원 모드 </a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">회원관리</a></li>
+					<li><a href="#">게시물관리</a></li>
+					<li><a href="#">회원 모드 </a></li>
 				</ul>
 				<br>
 			</div>
@@ -72,13 +59,13 @@
 					<div class="col-sm-3">
 						<div class="well">
 							<h4>가입자 수</h4>
-							<p>회원 수 / 관리자 수</p>
+							<p>31 명 / 7 명</p>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="well">
 							<h4>차단된 회원</h4>
-							<p>차단한 수</p>
+							<p>3 명</p>
 						</div>
 					</div>
 					<div class="col-sm-3">
@@ -132,7 +119,7 @@
 			</div>
 		</div>
 	</div>
-
+</section>
 
 
 

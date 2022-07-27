@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+
+    
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}" />
@@ -17,7 +19,7 @@
 
 </head>
 <body>
-	<!-- Header -->
+   <!-- Header -->
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -35,26 +37,30 @@
                             <li class="scroll-to-section"><a href="#">서비스 소개</a></li>
                             <li class="scroll-to-section"><a href="#popular">둘러보기</a></li>
                             <li class="scroll-to-section"><a href="#customer">고객센터</a></li>
-							<c:choose>
-								<c:when test="${isLogOn==true and not empty login}">
-									 <c:choose>								
-									 	<c:when test="${isLogOn==true and login.us_id=='admin' }">
-									 		<li><a href="${contextPath}/adminMode">관리자 모드 </a></li>
-									 	</c:when>
-										<c:otherwise>
-											<li><a href="${contextPath}/mypage/mypage">${login.us_nickname }님 </a></li>
-										</c:otherwise>
-									</c:choose>
-								</c:when>
-								<c:otherwise>
-									<li><a href="${contextPath}login.do">로그인</a></li>
-								</c:otherwise>
-							</c:choose>
-						</ul>
+                     <c:choose>
+                        <c:when test="${isLogOn==true and not empty login}">
+                           <c:choose>
+                              <c:when test="${ login.us_id=='admin' }">
+                                 <li><a href="${contextPath}/logout">로그아웃</a></li>
+                                 <li><a href="${contextPath}/adminMode">관리자 모드 </a></li>
+                              </c:when>
+                              <c:otherwise>
+                                 <li><a href="${contextPath}/logout">로그아웃</a></li>
+                                 <li><a href="${contextPath}/mypage/mypage?my_id=<c:out value='${login.us_id }'/>"
+                                 >${login.us_nickname }님</a></li>
+                              </c:otherwise>
+                           </c:choose>
+                        </c:when>
+                        <c:otherwise>
+                           <li><a href="${contextPath}login.do">로그인</a></li>
+                        </c:otherwise>
+                     </c:choose>
+
+                  </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-	
+   
     <!--// header-->
